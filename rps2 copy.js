@@ -10,7 +10,6 @@ const startGameBtn = document.getElementById("start-game");
 
 // form options
 const form = document.querySelector(".formInput");
-
 const submitBtn = document.getElementById("submit-btn");
 
 

@@ -21,6 +21,32 @@ body, html {
 }
 
 
+.game-options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid black;
+
+    width: 50%;
+    margin-top: 30px;
+    /* padding: 10px; */
+}
+
+@media all and (max-width: 600px) {
+    .game-options {
+        width: 100%;
+    }
+}
+
+@media all and (min-width: 601px) and (max-width: 900px) {
+    .game-options {
+        width: 65%;
+    }
+}
+
+
 
 #start-game {
     border-radius: 5px;
@@ -39,42 +65,19 @@ body, html {
 }
 
 
-.game-options {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 
-    border: 1px solid black;
-
-    width: 50%;
-    margin-top: 30px;
-    padding: 10px;
-}
-
-@media all and (max-width: 600px) {
-    .game-options {
-        width: 95%;
-    }
-}
-
-@media all and (min-width: 601px) and (max-width: 900px) {
-    .game-options {
-        width: 65%;
-    }
-}
-
+/* FORM */
 
 .formInput {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
-    width: 100%;
-
+    justify-content: center;
+    width: 95%;
     border: 1px solid black;
-
     margin-top: 40px;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 #playerChoice {
@@ -85,8 +88,8 @@ body, html {
     border: 1px solid rgba(163, 161, 161, .4);
     padding: 5px 10px;
     transition: all .4s ease-in;
-    width: 45%;
-
+    width: 50%;
+    margin: 10px;
 }
 
 #playerChoice::placeholder {
@@ -98,6 +101,7 @@ body, html {
 
 #selection-text {
     font-weight: 300;
+    margin: 10px;
 }
 
 #submit-btn {
@@ -110,6 +114,7 @@ body, html {
     transition: all .4s ease-in;
     width: 15%;
     justify-content: flex-end;
+    margin: 10px;
 }
 
 
