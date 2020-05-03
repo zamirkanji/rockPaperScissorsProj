@@ -59,7 +59,7 @@ body {
     font-size: 1.3em;
     font-weight: 100;
     transition: all .3s ease-in;
-    opacity: .9;
+    opacity: .7;
 }
 
 #start-game:hover {
@@ -69,7 +69,7 @@ body {
 .bgImg {
     background-image: url("/src/spaceRPS.jpg");
     background-color: #cccccc;
-    height: 300px;
+    height: 400px;
     width: 75%;
     background-position: center;
     background-repeat: no-repeat;
