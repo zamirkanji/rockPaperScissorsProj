@@ -6,6 +6,8 @@ body, html {
     /* font-family: 'Work Sans', sans-serif; */
     font-family: 'Quicksand', sans-serif;
     /* font-family: 'Crimson Text', serif; */
+  
+    /* background-repeat: no-repeat; */
 }
 
 .body-container {
@@ -17,8 +19,12 @@ body, html {
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
-    background-color: rgba(0, 197, 223, 0.4);
+    /* background-color: rgba(0, 197, 223, 0.4); */
+    background: linear-gradient(#ea6731, #241a33);
 }
+
+
+
 
 
 .game-options {
