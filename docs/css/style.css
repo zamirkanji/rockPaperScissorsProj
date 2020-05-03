@@ -10,7 +10,8 @@ body {
 }
 
 .body-container {
-    background: linear-gradient(#ea6731, #241a33);
+    /* background: linear-gradient(#ea6731, #241a33); */
+    background-color: rgba(133,171,150, 0.4);
     width: 100%;
     height: 100%;
     margin: 0;
@@ -28,11 +29,14 @@ body {
     /* -webkit-text-shadow: 12px 12px 19px -8px rgba(0,0,0,0.76);
     -moz-text-shadow: 12px 12px 19px -8px rgba(0,0,0,0.76);
     text-shadow: 12px 12px 19px -8px rgba(0,0,0,0.76); */
+
     color: #ccdcce;
+    color: #211931;
+
     /* background: white; */
     /* background: linear-gradient(#e66465, #9198e5); */
     text-shadow: 0 0 15px rgba(192,159,52, .76), 0 0 10px rgba(192,159,52, .76);
-    font-weight: 100;
+    font-weight: 400;
     padding: 10px;
 }
 
@@ -67,10 +71,10 @@ body {
 }
 
 .bgImg {
-    background-image: url("docs/src/spaceRPS.jpg");
+    background-image: url("/docs/src/spaceRPS.jpg");
     background-color: #cccccc;
-    height: 400px;
-    width: 75%;
+    height: 425px;
+    width: 80%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -88,6 +92,6 @@ body {
         /* background-repeat: inherit;
         background-position: inherit; */
         width: 90%;
-        height: 300px;
+        height: 375px;
     }
 }

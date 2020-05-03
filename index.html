@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="docs/css/style.css">
+    <link rel="stylesheet" href="/docs/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet">
 </head>
 <body>
@@ -16,7 +16,11 @@
         <header>
             <h2 id="rock-paper-scissors-head">Let's Play Rock-Paper-Scissors!</h2>
         </header>
-        <button onclick="document.location = 'docs/landing/landing.html'" id="start-game">Start Game!</button>  
+        <!-- <button onclick="document.location = 'docs/landing/landing.html'" id="start-game">Start Game!</button>
+           -->
+        <form action="/landing.html">
+            <input id="start-game" type="submit" value="Start Game">
+        </form>
     </div>
 </body>
 </html>
