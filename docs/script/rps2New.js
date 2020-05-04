@@ -138,3 +138,7 @@ submitBtn.addEventListener("click", function () {
     showWinner.textContent = `RESULT: ${winner}`;
 });
 
+
+
+//find winner from normal buttons
+
