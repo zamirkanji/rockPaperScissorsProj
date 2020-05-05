@@ -20,11 +20,15 @@ body, html {
     /* justify-content: center; */
     align-items: center;
     /* background-color: rgba(0, 197, 223, 0.4); */
-    background: linear-gradient(#ea6731, #241a33);
+    /* background: linear-gradient(#ea6731, #241a33); */
+    background-color: rgba(133,171,150, 0.5);
 }
 
 
-
+#rock-paper-scissors-head {
+    font-weight: 200;
+    margin-top: 25px;
+}
 
 
 .game-options {
@@ -33,9 +37,9 @@ body, html {
     justify-content: center;
     align-items: center;
 
-    border: 1px solid black;
+    border: 3px solid black; 
 
-    width: 50%;
+    width: 50%; /* of whole page */
     margin-top: 30px;
     /* padding: 10px; */
 }
@@ -57,13 +61,16 @@ body, html {
 #start-game {
     border-radius: 5px;
     color: white;
-    background-color: black;
+    background-color: #211931;
     opacity: .8;
     border: 1px solid rgba(163, 161, 161, .4);
     padding: 5px 10px;
     transition: all .4s ease-in;
-    width: 50%;
-    height: 30px;
+    width: 50%; /* of game options box */
+    margin-top: 5px;
+    /* height: 30px; */
+    height: 20%;
+    text-align: center;
 }
 
 #start-game:hover {
@@ -72,18 +79,30 @@ body, html {
 
 
 
+
+
+
+
 /* FORM */
 
-.formInput {
+.playerInputRow {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    width: 95%;
+    width: 100%; /* of game options box */
+
     border: 1px solid black;
+
     margin-top: 40px;
     margin-right: 10px;
     margin-left: 10px;
+}
+
+#selection-text {
+    font-weight: 200;
+    margin: 10px;
+    width: 25%;
 }
 
 #playerChoice {
@@ -95,7 +114,7 @@ body, html {
     padding: 5px 10px;
     transition: all .4s ease-in;
     width: 50%;
-    margin: 10px;
+    /* margin: 10px; */
 }
 
 #playerChoice::placeholder {
@@ -105,28 +124,26 @@ body, html {
 }
 
 
-#selection-text {
-    font-weight: 300;
-    margin: 10px;
-}
-
 #submit-btn {
     border-radius: 5px;
     color: white;
-    background-color: black;
+    background-color: #211931;
     opacity: .8;
     border: 1px solid rgba(163, 161, 161, .4);
     padding: 5px 5px;
     transition: all .4s ease-in;
-    width: 15%;
+    width: 25%;
     justify-content: flex-end;
     margin: 10px;
 }
 
 
+
+/* OR CLICK ON BUTTONS */
+
 #or-click {
     margin-top: 30px;
-    font-weight: 300;
+    font-weight: 200;
 }
 
 
@@ -187,17 +204,25 @@ body, html {
 
 
 
+
+
+
+
+
+
+
+
 .results {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center; */
+    /* align-items: center; */
     flex-direction: column;
-
-
     margin-top: 50px;
     margin-bottom: 10px;
     padding: 10px;
-    border: 3px solid black;
+
+    border: 1px solid black;
+
     width: 50%;
     height: 40%;
 }
@@ -209,13 +234,87 @@ body, html {
     }
 }
 
+@media all and (max-width: 600px) {
+    .results {
+        width: 75%;
+        height: 40%;
+    }
+}
+
+
+
+
+
+
+
+
 #show-selections {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    /* flex-direction: column;  */
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; 
     color: black;
     font-weight: 300;
-    width: 75%;
+    width: 100%;
+
     /* border: 1px solid black; */
+
+    margin-top: 150px;
+}
+
+@media all and (max-width: 600px) {
+    #show-selections {
+        margin-top: 100px;
+    }
+}
+
+#player-result  {
+    font-weight: 400;
+    font-size: 1em;
+    /* margin-right: 50px; */
+    margin: 5px;
+}
+
+#computer-result {
+    font-weight: 400;
+    font-size: 1em;
+    /* margin-left: 50px; */
+    margin: 5px;
+}
+
+
+#winner {
+    text-align: center;
+    margin-top: 125px;
+    font-weight: 900;
+}
+
+.clear-btn {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    /* border: 1px solid black; */
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+#clear-btn-one {
+    border-radius: 5px;
+    color: white;
+    background-color: #211931;
+    opacity: .8;
+    border: 1px solid rgba(163, 161, 161, .4);
+    padding: 5px 10px;
+    transition: all .4s ease-in;
+    width: 50%;
+    height: 30px;
+}
+
+@media all and (max-width: 600px) {
+    #clear-btn-one {
+        margin-bottom: 10px;
+        height: 40px;
+        width: 65%;
+    }
 }
