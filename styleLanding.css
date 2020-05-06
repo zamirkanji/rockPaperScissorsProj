@@ -59,7 +59,7 @@ body, html {
 
 
 #start-game {
-    border-radius: 5px;
+    border-radius: 10px;
     color: white;
     background-color: #211931;
     opacity: .8;
@@ -68,17 +68,23 @@ body, html {
     transition: all .4s ease-in;
     width: 50%; /* of game options box */
     margin-top: 5px;
-    /* height: 30px; */
-    height: 20%;
+    height: 30px;
+    /* height: 20%; */
     text-align: center;
+    font-size: 1.1em;
+    font-weight: 100;
 }
 
 #start-game:hover {
     opacity: .4;
 }
 
-
-
+@media all and (max-width: 600px) {
+    #start-game {
+        width: 45%;
+        height: 50px
+    }
+}
 
 
 
@@ -99,10 +105,26 @@ body, html {
     margin-left: 10px;
 }
 
+@media all and (max-width: 600px) {
+    .playerInputRow {
+        height: 25%;
+    }
+}
+
 #selection-text {
     font-weight: 200;
     margin: 10px;
     width: 25%;
+    /* border: 1px solid black; */
+    text-align: center;
+}
+
+@media all and (max-width: 600px) {
+    #selection-text {
+        width: 30%;
+        font-size: 1.2em;
+        font-weight: 100;
+    }
 }
 
 #playerChoice {
@@ -117,10 +139,20 @@ body, html {
     /* margin: 10px; */
 }
 
+@media all and (max-width: 600px) {
+    #submit-btn {
+        width: 40%;
+        font-size: 1em;
+        font-weight: 100;
+    }
+}
+
 #playerChoice::placeholder {
     color: black;
     font-weight: 400;
     text-align: center;
+    opacity: .5;
+    font-size: 1.1em;
 }
 
 
@@ -137,12 +169,21 @@ body, html {
     margin: 10px;
 }
 
+@media all and (max-width: 600px) {
+    #submit-btn {
+        width: 30%;
+        font-size: 1em;
+        font-weight: 100;
+    }
+}
+
+
 
 
 /* OR CLICK ON BUTTONS */
 
 #or-click {
-    margin-top: 30px;
+    margin-top: 25px;
     font-weight: 200;
 }
 
@@ -158,43 +199,92 @@ body, html {
 }
 
 
+.button-options {
+    /* border: 1px solid black; */
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+@media all and (max-width: 600px) {
+    .button-options {
+        width: 100%;
+        /* height: 50px */
+        justify-content: space-evenly;
+        /* margin: 20px; */
+    }
+}
+
 #rock-btn {
     border-radius: 5px;
-    background-color: rgba(0, 0, 0, .4);
+    background-color: #211931;
+    color: #ccdcce;
     opacity: .8;
     border: 1px solid rgba(0, 0, 0, .4);
     padding: 5px 10px;
     transition: all .4s ease-in;
-    font-weight: 300;
-    width: 66px;
+    font-weight: 100;
+    width: 20%;
     margin: 5px;
-    margin-top: 10px;
+    text-align: center;
+    /* margin-top: 10px; */
+}
+
+@media all and (max-width: 600px) {
+    #rock-btn {
+        width: 33%;
+        margin: 10px;
+        font-size: 1.1em;
+    }
 }
 
 #paper-btn {
     border-radius: 5px;
-    background-color: rgba(0, 0, 0, .4);
+    background-color: #211931;
+    color: #ccdcce;
     opacity: .8;
     border: 1px solid rgba(0, 0, 0, .4);
     padding: 5px 10px;
     transition: all .4s ease-in;
-    font-weight: 300;
-    width: 66px;
+    font-weight: 100;
+    width: 20%;
     margin: 5px;
-    margin-top: 10px;
+    text-align: center;
+    /* margin-top: 10px; */
+}
+
+@media all and (max-width: 600px) {
+    #paper-btn {
+        width: 33%;
+        margin: 10px;
+        font-size: 1.1em;
+    }
 }
 
 #scissors-btn {
     border-radius: 5px;
-    background-color: rgba(0, 0, 0, .4);
+    background-color: #211931;
+    color: #ccdcce;
     opacity: .8;
     border: 1px solid rgba(0, 0, 0, .4);
     padding: 5px 10px;
     transition: all .4s ease-in;
-    font-weight: 300;
-    width: 66px;
+    font-weight: 100;
+    width: 20%;
     margin: 5px;
-    margin-top: 10px;
+    text-align: center;
+    /* margin-top: 10px; */
+}
+
+@media all and (max-width: 600px) {
+    #scissors-btn {
+        width: 33%;
+        margin: 10px;
+        font-size: 1.1em;
+    }
 }
 
 
@@ -208,9 +298,7 @@ body, html {
 
 
 
-
-
-
+/* RESULTS BOX */
 
 .results {
     display: flex;
@@ -242,12 +330,6 @@ body, html {
 }
 
 
-
-
-
-
-
-
 #show-selections {
     display: flex;
     /* flex-direction: column;  */
@@ -258,14 +340,16 @@ body, html {
     font-weight: 300;
     width: 100%;
 
-    /* border: 1px solid black; */
+    border: 1px solid black;
 
     margin-top: 150px;
 }
 
 @media all and (max-width: 600px) {
     #show-selections {
-        margin-top: 100px;
+        margin-top: 150px;
+        justify-content: space-evenly;
+        font-size: .8em;
     }
 }
 
@@ -300,7 +384,7 @@ body, html {
 }
 
 #clear-btn-one {
-    border-radius: 5px;
+    border-radius: 10px;
     color: white;
     background-color: #211931;
     opacity: .8;
@@ -314,7 +398,9 @@ body, html {
 @media all and (max-width: 600px) {
     #clear-btn-one {
         margin-bottom: 10px;
-        height: 40px;
-        width: 65%;
+        height: 50px;
+        width: 75%;
+        font-size: 1.1em;
+        font-weight: 100;
     }
 }

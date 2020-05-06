@@ -61,11 +61,12 @@ body {
     margin-top: 125px;
     border-radius: 15px;
     color: #b0b3a8;
-    color: #211931;
+    /* color: #211931;
     color: rgba(133,171,150, 0.5);
+    color: #211931; */
     border: none;
     /* border: .5px solid rgba(228,101,50, .6); */
-    background-color: rgba(92,40,59, 1.0);
+    background-color: rgba(92,40,59, .8);
     height: 50px;
     width: 200px;
     -webkit-box-shadow: 12px 12px 19px -8px rgba(0,0,0,0.76);
@@ -73,9 +74,9 @@ body {
     box-shadow: 12px 12px 19px -8px rgba(0,0,0,0.76);
 
     font-size: 1.3em;
-    font-weight: 100;
-    transition: all .3s ease-in;
-    opacity: .7;
+    font-weight: 300;
+    transition: all .2s ease-in;
+    opacity: .9;
 }
 
 @media all and (max-width: 600px) {
@@ -85,7 +86,7 @@ body {
 }
 
 #start-game:hover {
-    opacity: .4;
+    opacity: .5;
 }
 
 .bgImg {

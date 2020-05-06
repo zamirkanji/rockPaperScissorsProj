@@ -9,7 +9,7 @@ const showWinner = document.getElementById("winner");
 const startGameBtn = document.getElementById("start-game");
 
 // input options
-const inputOptions = document.querySelector(".playerInputRow");
+const inputOptions = document.querySelector(".playerInputRow"); //
 const submitBtn = document.getElementById("submit-btn");
 
 
@@ -64,7 +64,7 @@ const getPlayerInputForm = () => { //arrow function
         // playerInput !== Rock &&
         playerInput !== PAPER &&
         // playerInput !== Paper &&
-        playerInput !== SCISSORS 
+        playerInput !== SCISSORS
         // playerInput !== Scissors 
     ) {
         alert("Invalid Choice! We chose Rock for you!");
@@ -103,10 +103,10 @@ const getComputerChoice = () => {
 const determineWinner = (cChoice, pChoice) => {
     return cChoice === pChoice ? RESULT_DRAW :
         cChoice === ROCK && pChoice === PAPER ||
-        // cChoice === Rock && pChoice === Paper || // conditional
+            // cChoice === Rock && pChoice === Paper || // conditional
             cChoice === SCISSORS && pChoice === ROCK || //conditional
             // cChoice === Scissors && pChoice === Rock ||
-            cChoice === PAPER && pChoice === SCISSORS 
+            cChoice === PAPER && pChoice === SCISSORS
             // cChoice === Paper && pChoice === Scissors
             ? PLAYER_WINS : COMPUTER_WINS;
 }
@@ -131,7 +131,7 @@ startGameBtn.addEventListener("click", () => {
 })
 
 // startGameBtn.addEventListener("click", function () {
-    
+
 // })
 
 
@@ -175,6 +175,14 @@ const clearGame = () => {
     showWinner.innerHTML = ""; //clears winner for now... when i add a counter, will need to change
     showCompInput.innerHTML = ""; //clears winner for now... when i add a counter, will need to change
     showPlayerInput.innerHTML = ""; //clears winner for now... when i add a counter, will need to change
+
+    //remove show game and add back vis-hidden
+    inputOptions.classList.remove("showGame");
+    inputOptions.classList.add("vis-Hidden");
+    choiceBtns.classList.remove("showGame");
+    choiceBtns.classList.add("vis-Hidden");
+    orClickText.classList.remove("showGame");
+    orClickText.classList.add("vis-Hidden");
 }
 
 
