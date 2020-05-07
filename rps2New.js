@@ -35,11 +35,15 @@ const PAPER = "PAPER";
 // const Paper = "Paper";
 const SCISSORS = "SCISSORS";
 // const Scissors = "Scissors";
-
 const DEFAULT_USER_CHOICE = "ROCK";
 const RESULT_DRAW = "DRAW";
 const PLAYER_WINS = "PLAYER WINS";
 const COMPUTER_WINS = "COMPUTER WINS";
+
+//Counters to keep score
+let PLAYER_COUNTER = 0;
+let COMPUTER_COUNTER = 0;
+
 
 let gameIsRunning = false;
 

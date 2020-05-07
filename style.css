@@ -37,8 +37,8 @@ body {
     /* background: white; */
     /* background: linear-gradient(#e66465, #9198e5); */
     /* text-shadow: 0 0 15px rgba(192,159,52, .76), 0 0 10px rgba(192,159,52, .76); */
-    text-shadow: 0 0 15px rgba(92,40,59, 0.4), 0 0 10px rgba(92,40,59, 0.4);
-    font-weight: 100;
+    /* text-shadow: 0 0 15px rgba(92,40,59, 0.4), 0 0 10px rgba(92,40,59, 0.4); */
+    font-weight: 400;
     padding: 10px;
 }
 
@@ -74,7 +74,7 @@ body {
     box-shadow: 12px 12px 19px -8px rgba(0,0,0,0.76);
 
     font-size: 1.3em;
-    font-weight: 300;
+    font-weight: 400;
     transition: all .2s ease-in;
     opacity: .9;
 }

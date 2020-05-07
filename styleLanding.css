@@ -3,6 +3,8 @@ body, html {
     padding: 0;
     height: 100vh;
     width: 100vw;
+    /* width: 100vmin;
+    height: 100vmax; */
     /* font-family: 'Work Sans', sans-serif; */
     font-family: 'Quicksand', sans-serif;
     /* font-family: 'Crimson Text', serif; */
@@ -22,12 +24,42 @@ body, html {
     /* background-color: rgba(0, 197, 223, 0.4); */
     /* background: linear-gradient(#ea6731, #241a33); */
     background-color: rgba(133,171,150, 0.5);
+
+
+    border: 1px solid red;
 }
 
 
 #rock-paper-scissors-head {
-    font-weight: 200;
+    font-weight: 500;
     margin-top: 25px;
+    /* border: 1px solid black; */
+}
+
+
+@media all and (max-width: 600px) {
+    #rock-paper-scissors-head {
+        margin-top: 15px;
+    }
+}
+
+
+.images {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 25px;
+    width: 100%;
+    border: 1px solid black;
+    /* margin: 10px; */
+}
+
+@media all and (max-width: 600px) {
+    .images {
+        margin-top: 10px;
+        width: 100%;
+    }
 }
 
 
@@ -37,9 +69,9 @@ body, html {
     justify-content: center;
     align-items: center;
 
-    /* border: 3px solid black;  */
+    border: 3px solid black; 
 
-    width: 50%; /* of whole page */
+    width: 75%; /* of whole page */
     margin-top: 30px;
     /* padding: 10px; */
 }
@@ -47,6 +79,7 @@ body, html {
 @media all and (max-width: 600px) {
     .game-options {
         width: 100%;
+        margin-top: 10px;
     }
 }
 
@@ -63,7 +96,8 @@ body, html {
     color: white;
     background-color: #211931;
     opacity: .8;
-    border: 1px solid rgba(163, 161, 161, .4);
+    /* border: 1px solid rgba(163, 161, 161, .4); */
+    border: none;
     padding: 5px 10px;
     transition: all .4s ease-in;
     width: 50%; /* of game options box */
@@ -73,6 +107,7 @@ body, html {
     text-align: center;
     font-size: 1.1em;
     font-weight: 100;
+    /* border: 3px solid black; */
 }
 
 #start-game:hover {
@@ -82,7 +117,7 @@ body, html {
 @media all and (max-width: 600px) {
     #start-game {
         width: 45%;
-        height: 50px
+        height: 50px;
     }
 }
 
@@ -184,7 +219,7 @@ body, html {
 
 #or-click {
     margin-top: 25px;
-    font-weight: 200;
+    font-weight: 400;
 }
 
 
@@ -199,14 +234,16 @@ body, html {
 }
 
 
+
+/* rock paper scissors input buttons */
 .button-options {
-    /* border: 1px solid black; */
+    border: 1px solid black;
     margin-bottom: 10px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 50%;
+    width: 75%;
 }
 
 @media all and (max-width: 600px) {
@@ -214,6 +251,7 @@ body, html {
         width: 100%;
         /* height: 50px */
         justify-content: space-evenly;
+        /* margin: 5px; */
         /* margin: 20px; */
     }
 }
@@ -311,7 +349,7 @@ body, html {
 
     border: 3px solid black;
 
-    width: 50%;
+    width: 75%;
     height: 40%;
 }
 
@@ -324,10 +362,11 @@ body, html {
 
 @media all and (max-width: 600px) {
     .results {
-        width: 75%;
+        width: 100%;
         height: 40%;
     }
 }
+
 
 
 #show-selections {
@@ -337,19 +376,19 @@ body, html {
     justify-content: space-between;
     align-items: center; 
     color: black;
-    font-weight: 300;
+    font-weight: 400;
     width: 100%;
 
-    /* border: 1px solid black; */
+    border: 1px solid black;
 
     margin-top: 150px;
 }
 
 @media all and (max-width: 600px) {
     #show-selections {
-        margin-top: 150px;
+        margin-top: 100px;
         justify-content: space-evenly;
-        font-size: .8em;
+        font-size: 1em;
     }
 }
 
