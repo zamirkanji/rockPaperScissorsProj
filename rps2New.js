@@ -6,9 +6,12 @@ const showPlayerInput = document.getElementById("player-result");
 const showCompInput = document.getElementById("computer-result");
 const showWinner = document.getElementById("winner");
 
+
+//start game BUTTONS
+// const startGameIndex = document.getElementById("start-game-index"); //from index.html
 const startGameBtn = document.getElementById("start-game");
 
-// input options
+// input options - TO SHOW
 const inputOptions = document.querySelector(".playerInputRow"); //
 const submitBtn = document.getElementById("submit-btn");
 
@@ -25,6 +28,15 @@ const scissorsBtn = document.getElementById("scissors-btn");
 const rockImgResult = document.getElementById("rock-result");
 const paperImgResult = document.getElementById("paper-result");
 const scissorsImgResult = document.getElementById("scissors-result");
+
+
+
+//counters
+const playerCount = document.getElementById("player-count");
+const computerCount = document.getElementById("computer-count");
+
+
+const gameOver = document.getElementById("game-over");
 
 
 //clear game 
@@ -46,9 +58,10 @@ const RESULT_DRAW = "DRAW";
 const PLAYER_WINS = "PLAYER WINS";
 const COMPUTER_WINS = "COMPUTER WINS";
 
+
 //Counters to keep score
-let PLAYER_COUNTER = 0;
-let COMPUTER_COUNTER = 0;
+playerCount.textContent = 0;
+computerCount.textContent = 0;
 
 
 let gameIsRunning = false;
@@ -116,12 +129,12 @@ const determineWinner = (cChoice, pChoice) => {
 // }
 
 
-//starting game... show game options
+//starting game... show game options - FROM INDEX PAGE
 startGameBtn.addEventListener("click", () => {
-
     if (gameIsRunning) {
         return; // doesn't start new games
     }
+
     gameIsRunning = true; //when the button clicks
 
     showGame(); //shows game options
@@ -130,9 +143,11 @@ startGameBtn.addEventListener("click", () => {
 //get random choice from getComputerChoice function and store in variable to pass into determine winner function as an argument for "cChoice"
 
 
+
 //submit player section from INPUT FORM
 submitBtn.addEventListener("click", function () {
     gameIsRunning = true;
+
 
     const playerSelection = getPlayerInputForm();
     showPlayerInput.textContent = `Player Chooses ${playerSelection}`;
@@ -142,9 +157,50 @@ submitBtn.addEventListener("click", function () {
 
     const winner = determineWinner(computerChoice, playerSelection);
     showWinner.textContent = `Result: ${winner}`;
+
+
+    //show image for player selection
+    if (playerSelection === ROCK) {
+        playRock();
+    } else if (playerSelection === PAPER) {
+        playPaper();
+    } else {
+        playScissors();
+    }
+
+    //show image for computer random selection
+    if (computerChoice === ROCK) {
+        playRock();
+    } else if (computerChoice === PAPER) {
+        playPaper();
+    } else {
+        playScissors();
+    }
+
+    //add to counter for each winner
+    if (winner === PLAYER_WINS) {
+        playerCount.textContent++;
+    } else if (winner === COMPUTER_WINS) {
+        computerCount.textContent++;
+    }
 });
 
+const gameOverText = () => {
+    return gameOver.textContent = "Game Over!";
+}
 
+// playerCount === 5 ? gameOverText() : gameIsRunning;
+// computerCount === 5 ? gameOverText() : gameIsRunning;
+
+
+//need to figure out how to stop the game when winner reaches 5
+// THERE IS a better way to do this - need to end game and show "Game Over" text
+if (playerCount === 5) {
+    gameOverText();
+    // gameOver.textContent = "Game Over!";
+} else if (computerCount === 5) {
+    gameOverText();
+}
 
 
 
@@ -153,17 +209,17 @@ submitBtn.addEventListener("click", function () {
 // btn click - show image and play round 
 const playRock = () => {
     rockImgResult.classList.remove("vis-Hidden");
-    rockImgResult.classList.add("showGame");
+    rockImgResult.classList.add("showRock");
 }
 
 const playPaper = () => {
     paperImgResult.classList.remove("vis-Hidden");
-    paperImgResult.classList.add("showGame");
+    paperImgResult.classList.add("showPaper");
 }
 
 const playScissors = () => {
     scissorsImgResult.classList.remove("vis-Hidden");
-    scissorsImgResult.classList.add("showGame");
+    scissorsImgResult.classList.add("showScissors");
 }
 //event listeneres for btns
 rockBtn.addEventListener("click", playRock);
