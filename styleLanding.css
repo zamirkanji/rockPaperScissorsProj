@@ -239,7 +239,7 @@ body, html {
 
 /* rock paper scissors input buttons */
 .button-options {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     margin-bottom: 10px;
     display: flex;
     flex-direction: row;
