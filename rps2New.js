@@ -12,7 +12,7 @@ const startGameBtn = document.getElementById("start-game");
 const inputOptions = document.querySelector(".playerInputRow"); //
 const submitBtn = document.getElementById("submit-btn");
 
-
+//or click (text)
 const orClickText = document.getElementById("or-click");
 
 //button options
@@ -20,6 +20,12 @@ const choiceBtns = document.querySelector(".button-options");
 const rockBtn = document.getElementById("rock-btn");
 const paperBtn = document.getElementById("paper-btn");
 const scissorsBtn = document.getElementById("scissors-btn");
+
+//rps images IN result
+const rockImgResult = document.getElementById("rock-result");
+const paperImgResult = document.getElementById("paper-result");
+const scissorsImgResult = document.getElementById("scissors-result");
+
 
 //clear game 
 const clearBtn = document.getElementById("clear-btn-one");
@@ -167,9 +173,25 @@ submitBtn.addEventListener("click", function () {
 });
 
 
+// const showImageResults = () => {
+//     rockImgResult
+// }
+
+
 
 //find winner from normal buttons
-
+rockBtn.addEventListener("click", () => {
+    rockImgResult.classList.remove("vis-Hidden");
+    rockImgResult.classList.add("showGame");
+})
+paperBtn.addEventListener("click", () => {
+    paperImgResult.classList.remove("vis-Hidden");
+    paperImgResult.classList.add("showGame");
+})
+scissorsBtn.addEventListener("click", () => {
+    scissorsImgResult.classList.remove("vis-Hidden");
+    scissorsImgResult.classList.add("showGame");
+})
 
 
 
@@ -187,6 +209,18 @@ const clearGame = () => {
     choiceBtns.classList.add("vis-Hidden");
     orClickText.classList.remove("showGame");
     orClickText.classList.add("vis-Hidden");
+
+    //clear COUNTER
+
+    //remove images from results box
+    rockImgResult.classList.remove("showGame");
+    rockImgResult.classList.add("vis-Hidden");
+
+    paperImgResult.classList.remove("showGame");
+    paperImgResult.classList.add("vis-Hidden");
+
+    scissorsImgResult.classList.remove("showGame");
+    scissorsImgResult.classList.add("vis-Hidden");
 }
 
 
