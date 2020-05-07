@@ -67,7 +67,7 @@ const showGame = () => {
 
 //get player input from form 
 const getPlayerInputForm = () => { //arrow function
-    const playerInput = document.getElementById("playerChoice").value;
+    const playerInput = document.getElementById("playerChoice").value.toUpperCase();
 
     if (
         playerInput !== ROCK &&
@@ -84,12 +84,6 @@ const getPlayerInputForm = () => { //arrow function
 }
 
 
-// get btn input 
-// const getBtnInput = () => {
-
-// }
-
-
 //randomize computer choice and return it 
 const getComputerChoice = () => {
     const randomValue = Math.random();
@@ -100,13 +94,6 @@ const getComputerChoice = () => {
     } else {
         return SCISSORS;
     }
-    // if (randomValue < 0.34) {
-    //     return Rock;
-    // } else if (randomValue < 0.67 && randomValue > 0.35) {
-    //     return Paper;
-    // } else {
-    //     return Scissors; 
-    // }
 }
 
 //compare choices from either btn/form input and computer choice
@@ -123,10 +110,10 @@ const determineWinner = (cChoice, pChoice) => {
 
 
 
-const gameisStarting = () => {
-    const gameStarting = document.getElementById("game-Starting");
-    gameStarting.textContent = "Game is starting...";
-}
+// const gameisStarting = () => {
+//     const gameStarting = document.getElementById("game-Starting");
+//     gameStarting.textContent = "Game is starting...";
+// }
 
 
 //starting game... show game options
@@ -140,22 +127,7 @@ startGameBtn.addEventListener("click", () => {
     showGame(); //shows game options
 })
 
-// startGameBtn.addEventListener("click", function () {
-
-// })
-
-
-
-
-
-// const getInput = () => {
-
-// }
-
-
-
 //get random choice from getComputerChoice function and store in variable to pass into determine winner function as an argument for "cChoice"
-
 
 
 //submit player section from INPUT FORM
@@ -173,29 +145,45 @@ submitBtn.addEventListener("click", function () {
 });
 
 
-// const showImageResults = () => {
-//     rockImgResult
-// }
+
+
+
+
+// BUTTONS
+// btn click - show image and play round 
+const playRock = () => {
+    rockImgResult.classList.remove("vis-Hidden");
+    rockImgResult.classList.add("showGame");
+}
+
+const playPaper = () => {
+    paperImgResult.classList.remove("vis-Hidden");
+    paperImgResult.classList.add("showGame");
+}
+
+const playScissors = () => {
+    scissorsImgResult.classList.remove("vis-Hidden");
+    scissorsImgResult.classList.add("showGame");
+}
+//event listeneres for btns
+rockBtn.addEventListener("click", playRock);
+paperBtn.addEventListener("click", playPaper);
+scissorsBtn.addEventListener("click", playScissors);
+
+
 
 
 
 //find winner from normal buttons
-rockBtn.addEventListener("click", () => {
-    rockImgResult.classList.remove("vis-Hidden");
-    rockImgResult.classList.add("showGame");
-})
-paperBtn.addEventListener("click", () => {
-    paperImgResult.classList.remove("vis-Hidden");
-    paperImgResult.classList.add("showGame");
-})
-scissorsBtn.addEventListener("click", () => {
-    scissorsImgResult.classList.remove("vis-Hidden");
-    scissorsImgResult.classList.add("showGame");
-})
 
 
 
 
+
+
+
+
+// CLEAR WHOLE GAME - including COUNTER
 const clearGame = () => {
     gameIsRunning = false;
     showWinner.innerHTML = ""; //clears winner for now... when i add a counter, will need to change
@@ -222,7 +210,5 @@ const clearGame = () => {
     scissorsImgResult.classList.remove("showGame");
     scissorsImgResult.classList.add("vis-Hidden");
 }
-
-
-//clear game 
+//clear game event 
 clearBtn.addEventListener("click", clearGame);
