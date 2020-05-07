@@ -26,7 +26,7 @@ body, html {
     background-color: rgba(133,171,150, 0.5);
 
 
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 
@@ -138,29 +138,40 @@ body, html {
     /* border: 1px solid black; */
 
     margin-top: 40px;
-    margin-right: 10px;
-    margin-left: 10px;
+    /* margin-right: 10px;
+    margin-left: 10px; */
 }
 
 @media all and (max-width: 600px) {
     .playerInputRow {
-        height: 25%;
+        height: 15%;
     }
 }
 
 #selection-text {
-    font-weight: 200;
+    color: #211931;
+    /* font-weight: 400; */
+    font-weight: 400;
     margin: 10px;
     width: 25%;
     /* border: 1px solid black; */
-    text-align: center;
+    /* text-align: center; */
+    /* height: 50%; */
+    float: left;
+    display: block;
+}
+
+#selection-text:after {
+    content: ": ";
 }
 
 @media all and (max-width: 600px) {
     #selection-text {
-        width: 30%;
-        font-size: 1.2em;
-        font-weight: 100;
+        color: #211931;
+        width: 25%;
+        font-size: 24px;
+        /* line-height: inherit; */
+        font-weight: 400;
     }
 }
 
@@ -173,12 +184,13 @@ body, html {
     padding: 5px 10px;
     transition: all .4s ease-in;
     width: 50%;
+    /* height: 35%; */
     /* margin: 10px; */
 }
 
 @media all and (max-width: 600px) {
-    #submit-btn {
-        width: 40%;
+    #playerChoice {
+        width: 50%;
         font-size: 1em;
         font-weight: 100;
     }
@@ -202,13 +214,18 @@ body, html {
     padding: 5px 5px;
     transition: all .4s ease-in;
     width: 25%;
+    /* height: 55%; */
     justify-content: flex-end;
     margin: 10px;
 }
 
+#submit-btn:hover {
+    opacity: .6;
+}
+
 @media all and (max-width: 600px) {
     #submit-btn {
-        width: 30%;
+        width: 25%;
         font-size: 1em;
         font-weight: 100;
     }
