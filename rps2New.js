@@ -178,9 +178,9 @@ submitBtn.addEventListener("click", function () {
     }
 
     //add to counter for each winner
-    if (winner === PLAYER_WINS) {
+    if (winner === PLAYER_WINS && gameIsRunning) {
         playerCount.textContent++;
-    } else if (winner === COMPUTER_WINS) {
+    } else if (winner === COMPUTER_WINS && gameIsRunning) {
         computerCount.textContent++;
     }
 });
@@ -241,10 +241,14 @@ scissorsBtn.addEventListener("click", playScissors);
 
 // CLEAR WHOLE GAME - including COUNTER
 const clearGame = () => {
+
     gameIsRunning = false;
+
+
     showWinner.innerHTML = ""; //clears winner for now... when i add a counter, will need to change
     showCompInput.innerHTML = ""; //clears winner for now... when i add a counter, will need to change
     showPlayerInput.innerHTML = ""; //clears winner for now... when i add a counter, will need to change
+
 
     //remove show game and add back vis-hidden
     inputOptions.classList.remove("showGame");
@@ -254,16 +258,22 @@ const clearGame = () => {
     orClickText.classList.remove("showGame");
     orClickText.classList.add("vis-Hidden");
 
-    //clear COUNTER
+
+    //clear COUNTER - ***FIND A DIFFERENT WAY***
+    // playerCount.textContent = 0;
+    // computerCount.textContent = 0;
+    playerCount.innerHTML = "";
+    computerCount.innerHTML = "";
+
 
     //remove images from results box
-    rockImgResult.classList.remove("showGame");
+    rockImgResult.classList.remove("showRock");
     rockImgResult.classList.add("vis-Hidden");
 
-    paperImgResult.classList.remove("showGame");
+    paperImgResult.classList.remove("showPaper");
     paperImgResult.classList.add("vis-Hidden");
 
-    scissorsImgResult.classList.remove("showGame");
+    scissorsImgResult.classList.remove("showScissors");
     scissorsImgResult.classList.add("vis-Hidden");
 }
 //clear game event 

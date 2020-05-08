@@ -52,9 +52,8 @@ body, html {
     margin-top: 25px;
     width: 100%;
 
-    border: 1px solid black;
+    /* border: 1px solid black; */
 
-    /* margin: 10px; */
 }
 
 @media all and (max-width: 600px) {
@@ -65,13 +64,38 @@ body, html {
 }
 
 
+@media all and (max-width: 600px) {
+    #top-logo-rock {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media all and (max-width: 600px) {
+    #top-logo-paper {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media all and (max-width: 600px) {
+    #top-logo-scissors {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+
+
+
+
 .game-options {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    border: 3px solid black; 
+    /* border: 3px solid black;  */
 
     width: 75%; /* of whole page */
     margin-top: 30px;
@@ -138,7 +162,7 @@ body, html {
     justify-content: center;
     width: 100%; /* of game options box */
 
-    border: 1px solid black;
+    /* border: 1px solid black; */
 
     margin-top: 40px;
     /* margin-right: 10px;
@@ -244,7 +268,7 @@ body, html {
     margin-top: 25px;
     font-weight: 400;
 
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 
@@ -252,7 +276,7 @@ body, html {
 /* rock paper scissors input buttons */
 .button-options {
 
-    border: 1px solid black;
+    /* border: 1px solid black; */
 
     margin-bottom: 10px;
     display: flex;
@@ -364,7 +388,7 @@ body, html {
     margin-bottom: 10px;
     padding: 10px;
 
-    border: 3px solid black;
+    border: 2px solid black;
 
     width: 75%;
     height: 40%;
@@ -390,8 +414,13 @@ body, html {
 /* image box */
 .imageResult {
     width: 100%;
+
     border: 2px solid black;
+
     padding: 5px;
+    /*temporary*/
+    display: flex;
+    justify-content: space-evenly;
 }
 
 @media all and (max-width: 600px) {
@@ -405,7 +434,7 @@ body, html {
 
 
 #rock-result {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     padding: 5px;
 }
 
@@ -417,7 +446,7 @@ body, html {
 }
 
 #paper-result {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     padding: 5px;
 }
 
@@ -429,7 +458,7 @@ body, html {
 }
 
 #scissors-result {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     padding: 5px;
 }
 
@@ -458,7 +487,7 @@ body, html {
     font-weight: 400;
     width: 100%;
 
-    border: 1px solid black;
+    /* border: 1px solid black; */
 
     margin-top: 150px;
 }
@@ -494,7 +523,9 @@ body, html {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    border: 1px solid black;
+
+    /* border: 1px solid black; */
+
     width: 100%;
     margin-top: 15px;
     /* margin: 5px; */
@@ -509,12 +540,16 @@ body, html {
 }
 
 #player-count {
-    border: 1px solid black;
+
+    /* border: 1px solid black; */
+
     /* margin-right: 110px; */
     padding: 5px;
 }
 #computer-count {
-    border: 1px solid black;
+
+    /* border: 1px solid black; */
+
     /* margin-left: 110px; */
     padding: 5px;
 }
@@ -530,8 +565,8 @@ body, html {
 
 @media all and (max-width: 600px) {
     #winner {
-        margin-top: 25px;
-        margin-bottom: 25px;
+        margin-top: 35px;
+        /* margin-bottom: 25px; */
     }
 }
 
