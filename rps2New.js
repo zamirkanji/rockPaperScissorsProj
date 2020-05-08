@@ -1,11 +1,7 @@
-const playerResult = document.getElementById("player-result");
-const computerResult = document.getElementById("computer-result");
-
-
+// show results on landing page 
 const showPlayerInput = document.getElementById("player-result");
 const showCompInput = document.getElementById("computer-result");
 const showWinner = document.getElementById("winner");
-
 
 //start game BUTTONS
 // const startGameIndex = document.getElementById("start-game-index"); //from index.html
@@ -29,15 +25,12 @@ const rockImgResult = document.getElementById("rock-result");
 const paperImgResult = document.getElementById("paper-result");
 const scissorsImgResult = document.getElementById("scissors-result");
 
-
-
 //counters
 const playerCount = document.getElementById("player-count");
 const computerCount = document.getElementById("computer-count");
 
-
+// game over text
 const gameOver = document.getElementById("game-over");
-
 
 //clear game 
 const clearBtn = document.getElementById("clear-btn-one");
@@ -64,7 +57,10 @@ playerCount.textContent = 0;
 computerCount.textContent = 0;
 
 
-let gameIsRunning = false;
+
+let inputGameIsRunning = false;
+let buttonIsRunning = false;
+
 
 
 //show game options 
@@ -109,6 +105,7 @@ const getComputerChoice = () => {
     }
 }
 
+
 //compare choices from either btn/form input and computer choice
 const determineWinner = (cChoice, pChoice) => {
     return cChoice === pChoice ? RESULT_DRAW :
@@ -131,11 +128,13 @@ const determineWinner = (cChoice, pChoice) => {
 
 //starting game... show game options - FROM INDEX PAGE
 startGameBtn.addEventListener("click", () => {
-    if (gameIsRunning) {
+    if (inputGameIsRunning) {
         return; // doesn't start new games
     }
 
-    gameIsRunning = true; //when the button clicks
+    // inputGameIsRunning = true; //when the button clicks
+
+    // buttonIsRunning = true;
 
     showGame(); //shows game options
 })
@@ -143,54 +142,101 @@ startGameBtn.addEventListener("click", () => {
 //get random choice from getComputerChoice function and store in variable to pass into determine winner function as an argument for "cChoice"
 
 
+// const diableButtonGame = () => {
+//     rockBtn.disabled = true;
+//     paperBtn.disabled = true;
+//     scissorsBtn.disabled = true;
+// }
+
 
 //submit player section from INPUT FORM
 submitBtn.addEventListener("click", function () {
-    gameIsRunning = true;
+    inputGameIsRunning = true;
+
+    // if (inputGameIsRunning) {
+    //     disableButtonGame();
+    // }
 
 
-    const playerSelection = getPlayerInputForm();
+    const playerSelection = getPlayerInputForm(); //storing playerInput in playerSelection
     showPlayerInput.textContent = `Player Chooses ${playerSelection}`;
+    console.log(playerSelection);
 
-    const computerChoice = getComputerChoice();
+    const computerChoice = getComputerChoice(); //storing random computer output in computerChoice
     showCompInput.textContent = `Computer Chooses ${computerChoice}`;
 
-    const winner = determineWinner(computerChoice, playerSelection);
+    const winner = determineWinner(computerChoice, playerSelection); //using playerselection and computerChoice as arguments to call the determineWinner func
     showWinner.textContent = `Result: ${winner}`;
 
 
     //show image for player selection
     if (playerSelection === ROCK) {
-        playRock();
+        showRock();
     } else if (playerSelection === PAPER) {
-        playPaper();
+        showPaper();
     } else {
-        playScissors();
+        showScissors();
     }
 
     //show image for computer random selection
     if (computerChoice === ROCK) {
-        playRock();
+        showRock();
     } else if (computerChoice === PAPER) {
-        playPaper();
+        showPaper();
     } else {
-        playScissors();
+        showScissors();
     }
 
     //add to counter for each winner
-    if (winner === PLAYER_WINS && gameIsRunning) {
+    if (winner === PLAYER_WINS && inputGameIsRunning) {
         playerCount.textContent++;
-    } else if (winner === COMPUTER_WINS && gameIsRunning) {
+        console.log(playerCount);
+    } else if (winner === COMPUTER_WINS && inputGameIsRunning) {
         computerCount.textContent++;
     }
 });
 
+
+
+
+
+
+
+//SHOW IMAGE FUNCTIONS
+const showRock = () => {
+    rockImgResult.classList.remove("vis-Hidden");
+    rockImgResult.classList.add("showRock");
+}
+const showPaper = () => {
+    paperImgResult.classList.remove("vis-Hidden");
+    paperImgResult.classList.add("showPaper");
+}
+const showScissors = () => {
+    scissorsImgResult.classList.remove("vis-Hidden");
+    scissorsImgResult.classList.add("showScissors");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//game is over text FUNCTION
 const gameOverText = () => {
     return gameOver.textContent = "Game Over!";
 }
 
-// playerCount === 5 ? gameOverText() : gameIsRunning;
-// computerCount === 5 ? gameOverText() : gameIsRunning;
+// playerCount === 5 ? gameOverText() : inputGameIsRunning;
+// computerCount === 5 ? gameOverText() : inputGameIsRunning;
 
 
 //need to figure out how to stop the game when winner reaches 5
@@ -205,23 +251,109 @@ if (playerCount === 5) {
 
 
 
-// BUTTONS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// BUTTONS - if any button is clicked, disable submit btn for form input and start ONLY button game
 // btn click - show image and play round 
+
 const playRock = () => {
-    rockImgResult.classList.remove("vis-Hidden");
-    rockImgResult.classList.add("showRock");
+    buttonIsRunning = true;
+
+    showRock();
+
+    // inputGameIsRunning = true;
+
+
+    const playerSelection = ROCK;
+    showPlayerInput.textContent = `Player Chooses ${playerSelection}`;
+
+    const computerChoice = getComputerChoice();
+    showCompInput.textContent = `Computer Chooses ${computerChoice}`;
+
+    const winner = determineWinner(computerChoice, playerSelection);
+    showWinner.textContent = `Result: ${winner}`;
+
+    if (winner === PLAYER_WINS && buttonIsRunning) {
+        playerCount.textContent++;
+    } else if (winner === COMPUTER_WINS && buttonIsRunning) {
+        computerCount.textContent++;
+    }
 }
 
+
 const playPaper = () => {
-    paperImgResult.classList.remove("vis-Hidden");
-    paperImgResult.classList.add("showPaper");
+    buttonIsRunning = true;
+
+    showPaper();
+    // inputGameIsRunning = true;
+
+
+    const playerSelection = PAPER;
+    showPlayerInput.textContent = `Player Chooses ${playerSelection}`;
+
+    const computerChoice = getComputerChoice();
+    showCompInput.textContent = `Computer Chooses ${computerChoice}`;
+
+    const winner = determineWinner(computerChoice, playerSelection);
+    showWinner.textContent = `Result: ${winner}`;
+
+    if (winner === PLAYER_WINS && buttonIsRunning) {
+        playerCount.textContent++;
+    } else if (winner === COMPUTER_WINS && buttonIsRunning) {
+        computerCount.textContent++;
+    }
 }
 
 const playScissors = () => {
-    scissorsImgResult.classList.remove("vis-Hidden");
-    scissorsImgResult.classList.add("showScissors");
+    buttonIsRunning = true;
+
+    showScissors();
+
+    // inputGameIsRunning = true;
+
+    const playerSelection = SCISSORS;
+    showPlayerInput.textContent = `Player Chooses ${playerSelection}`;
+
+    const computerChoice = getComputerChoice();
+    showCompInput.textContent = `Computer Chooses ${computerChoice}`;
+
+    const winner = determineWinner(computerChoice, playerSelection);
+    showWinner.textContent = `Result: ${winner}`;
+
+    if (winner === PLAYER_WINS && buttonIsRunning) {
+        playerCount.textContent++;
+    } else if (winner === COMPUTER_WINS && buttonIsRunning) {
+        computerCount.textContent++;
+    }
 }
-//event listeneres for btns
+
+//event listeners for btns
 rockBtn.addEventListener("click", playRock);
 paperBtn.addEventListener("click", playPaper);
 scissorsBtn.addEventListener("click", playScissors);
@@ -230,7 +362,41 @@ scissorsBtn.addEventListener("click", playScissors);
 
 
 
-//find winner from normal buttons
+
+
+
+
+
+// if buttonIsRunning, can't use inputgame UNTIL game reaches 5 and is cleared, then can choose either game to start running 
+
+// if one of the play rock, paper, or scissors buttons are pressed, buttonIsRunning is true and inputGame is false
+
+// if (playRock) {
+//     console.log("test");
+//     buttonIsRunning = true;
+//     inputGameIsRunning = false;
+
+// } else if (playPaper) {
+//     buttonIsRunning = true;
+//     inputGameIsRunning = false;
+
+// } else if (playScissors) {
+//     buttonIsRunning = true;
+//     inputGameIsRunning = false;
+
+// }
+
+
+
+// if inputGame is false, the submit button should be disabled - if its true, it should be enabled
+
+// if (!inputGameIsRunning) {
+//     submitBtn.disabled = true;
+// } else {
+//     inputGameIsRunning = true;
+//     submitBtn.disabled = false;
+// }
+
 
 
 
@@ -242,8 +408,8 @@ scissorsBtn.addEventListener("click", playScissors);
 // CLEAR WHOLE GAME - including COUNTER
 const clearGame = () => {
 
-    gameIsRunning = false;
-
+    inputGameIsRunning = false;
+    buttonIsRunning = false;
 
     showWinner.innerHTML = ""; //clears winner for now... when i add a counter, will need to change
     showCompInput.innerHTML = ""; //clears winner for now... when i add a counter, will need to change
@@ -275,6 +441,10 @@ const clearGame = () => {
 
     scissorsImgResult.classList.remove("showScissors");
     scissorsImgResult.classList.add("vis-Hidden");
+
+
+
+    // inputGameIsRunning = false;
 }
 //clear game event 
 clearBtn.addEventListener("click", clearGame);
