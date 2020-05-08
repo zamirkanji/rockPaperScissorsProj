@@ -408,16 +408,37 @@ body, html {
     border: 1px solid black;
     padding: 5px;
 }
+
+@media all and (max-width: 600px) {
+    #rock-result {
+        width: 50px;
+        height: 50px;
+    }
+}
+
 #paper-result {
     border: 1px solid black;
     padding: 5px;
 }
+
+@media all and (max-width: 600px) {
+    #paper-result {
+        width: 50px;
+        height: 50px;
+    }
+}
+
 #scissors-result {
     border: 1px solid black;
     padding: 5px;
 }
 
-
+@media all and (max-width: 600px) {
+    #scissors-result {
+        width: 50px;
+        height: 50px;
+    }
+}
 
 
 
