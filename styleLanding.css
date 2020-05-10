@@ -17,7 +17,7 @@ body, html {
     padding: auto;
     width: 100%;
     height: 100%;
-    
+
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
@@ -27,7 +27,7 @@ body, html {
     background-color: rgba(133,171,150, 0.5);
 
 
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 
@@ -96,7 +96,7 @@ body, html {
     justify-content: center;
     align-items: center;
 
-    border: 3px solid black; 
+    /* border: 3px solid black;  */
 
     width: 75%; /* of whole page */
     margin-top: 30px;
@@ -176,7 +176,7 @@ body, html {
     justify-content: center;
     width: 100%; /* of game options box */
     height: 40px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 
     margin-top: 40px;
     /* margin-right: 10px;
@@ -282,6 +282,7 @@ body, html {
 #submit-btn {
     border-radius: 5px;
     color: white;
+    color: #ccdcce;
     background-color: #211931;
     opacity: .8;
     /* border: 1px solid rgba(163, 161, 161, .4); */
@@ -323,7 +324,7 @@ body, html {
     margin-top: 25px;
     font-weight: 400;
 
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 
@@ -338,7 +339,7 @@ body, html {
 
 /* rock paper scissors input buttons */
 .button-options {
-    border: 1px solid black;
+    /* border: 1px solid black; */
 
     margin-bottom: 10px;
     display: flex;
@@ -522,7 +523,7 @@ body, html {
 .imageResult {
     width: 100%;
 
-    border: 2px solid black;
+    /* border: 2px solid black; */
 
     padding: 5px;
     /*temporary*/
@@ -594,7 +595,7 @@ body, html {
     font-weight: 400;
     width: 100%;
 
-    border: 2px solid black;
+    /* border: 2px solid black; */
 
     margin-top: 50px;
 }
@@ -622,7 +623,8 @@ body, html {
     font-size: 1em;
     /* margin-right: 50px; */
     /* margin: 5px; */
-    border: 1px solid black;
+
+    /* border: 1px solid black; */
 }
 
 #computer-result {
@@ -630,7 +632,8 @@ body, html {
     font-size: 1em;
     /* margin-left: 50px; */
     /* margin: 5px; */
-    border: 1px solid black;
+
+    /* border: 1px solid black; */
 }
 
 
@@ -645,7 +648,7 @@ body, html {
     justify-content: space-evenly;
     align-items: center;
 
-    border: 2px solid black;
+    /* border: 2px solid black; */
 
     width: 100%;
     margin-top: 15px;
@@ -719,7 +722,10 @@ body, html {
     width: 50%;
     display: flex;
     justify-content: center;
-    border: 1px solid black;
+    /* color: #ccdcce; */
+
+    /* border: 1px solid black; */
+
     margin-top: 25px;
     margin-bottom: 25px;
 }
@@ -734,6 +740,7 @@ body, html {
 #clear-btn-one {
     border-radius: 10px;
     color: white;
+    color: #ccdcce;
     background-color: #211931;
     opacity: .8;
     border: 1px solid rgba(163, 161, 161, .4);
